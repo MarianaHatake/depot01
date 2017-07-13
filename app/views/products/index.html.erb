@@ -1,10 +1,10 @@
 <p id="notice"><%= notice %></p>
-<h1>Productos</h1>
+<h1>Products</h1>
 <table>
 <% @products.each do |product| %>
 <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
 <td>
-<%=image_tag(product.image_url, class: 'list_image') %>
+<%= image_tag(product.image_url, class: 'list_image') %>
 </td>
 <td class="list_description">
 <dl>
@@ -16,7 +16,8 @@ length: 80) %></dd>
 <td class="list_actions">
 <%= link_to 'Show', product %><br/>
 <%= link_to 'Edit', edit_product_path(product) %><br/>
-
+Chapter 6. Task A: Creating the Application • 82
+report erratum • discuss
 <%= link_to 'Destroy', product, method: :delete,
 data: { confirm: 'Are you sure?' } %>
 </td>
@@ -24,4 +25,4 @@ data: { confirm: 'Are you sure?' } %>
 <% end %>
 </table>
 <br />
-<%= link_to 'Nuevo Producto', new_product_path %>
+<%= link_to 'New product', new_product_path %>
